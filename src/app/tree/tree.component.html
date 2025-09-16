@@ -1,0 +1,17 @@
+<ul>
+    <ng-container *ngTemplateOutlet="renderNode; context:{$implicit:root}"></ng-container>
+</ul>
+
+<ng-template #renderNode let-node>
+    <li>
+        {{node}}
+
+        @if (getChildren(node).length>0) {
+            <ul>
+                @for (child of getChildren(node); track $index) {
+                    <ng-container *ngTemplateOutlet="renderNode; context:{$implicit:child}"></ng-container>
+                }
+            </ul>
+        }
+    </li>
+</ng-template>

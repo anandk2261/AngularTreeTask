@@ -1,0 +1,14 @@
+ul {
+  margin-left: 20px;
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+li{
+    margin: 2px 0;
+}
+
+li::before {
+  content: "- ";
+}
+
